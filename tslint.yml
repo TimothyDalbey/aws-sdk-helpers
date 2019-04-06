@@ -1,0 +1,21 @@
+---
+defaultSeverity: error
+extends:
+- tslint:recommended
+jsRules: {}
+rules:
+  no-string-literal: false
+  variable-name:
+    - true
+    - ban-keywords
+    - check-format
+    - allow-pascal-case
+    - allow-leading-underscore
+    - allow-snake-case
+  object-literal-sort-keys: false
+  semicolon:
+    - true
+    - never
+  arrow-parens:
+    - true
+    - ban-single-arg-parens

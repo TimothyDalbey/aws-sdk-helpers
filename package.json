@@ -1,0 +1,44 @@
+{
+  "name": "@modaoperandi2/aws-sdk-helpers",
+  "version": "1.0.0",
+  "description": "AWS SDK Helpers",
+  "description": "A nice greeter",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": ["lib/**/*"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimothyDalbey/aws-sdk-helpers.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Timothy Dalbey",
+    "email": "tmdalbey@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimothyDalbey/aws-sdk-helpers/issues"
+  },
+  "homepage": "https://github.com/TimothyDalbey/aws-sdk-helpers#readme",
+  "devDependencies": {
+    "prettier": "^1.16.4",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.4.2"
+  },
+  "dependencies": {
+    "@types/node": "^11.13.0",
+    "aws-sdk": "^2.437.0"
+  }
+}
