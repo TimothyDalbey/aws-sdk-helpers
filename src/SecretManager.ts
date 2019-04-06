@@ -1,10 +1,12 @@
 import { SecretsManager } from "aws-sdk"
 
 class AWSSecretManager {
-  public async resolve(name: string, region: string): Promise<any> {
-    const secretsManager = new SecretsManager({ region })
+  public static async resolve(args: { name: string; region: string }): Promise<any> {
+    const secretsManager = new SecretsManager({
+      region: args.region,
+    })
 
-    const result = await secretsManager.getSecretValue({ SecretId: name }).promise()
+    const result = await secretsManager.getSecretValue({ SecretId: args.name }).promise()
 
     if (result instanceof Error) {
       throw result
@@ -27,7 +29,7 @@ class AWSSecretManager {
       throw e
     }
 
-    throw new Error("Somethign unexpected happened.")
+    throw new Error("Something unexpected happened.")
   }
 }
 
