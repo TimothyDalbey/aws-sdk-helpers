@@ -1,11 +1,12 @@
 {
   "name": "@modaoperandi2/aws-sdk-helpers",
-  "version": "1.0.0",
-  "description": "AWS SDK Helpers",
+  "version": "1.0.1",
   "description": "A nice greeter",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
