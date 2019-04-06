@@ -16,13 +16,13 @@ class AWSSecretManager {
       resolvedSecret = result.SecretString
     } else if (result.SecretBinary !== undefined) {
       const buff = new Buffer(result.SecretBinary.toString("ascii"), "base64")
-      resolved_secret = buff.toString("ascii")
+      resolvedSecret = buff.toString("ascii")
     } else {
       throw new Error("Unable to resolve secret.")
     }
 
     try {
-      return JSON.parse(resolved_secret)
+      return JSON.parse(resolvedSecret)
     } catch (e) {
       throw e
     }
