@@ -33,6 +33,10 @@
   },
   "homepage": "https://github.com/TimothyDalbey/aws-sdk-helpers#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.1",
     "prettier": "^1.16.4",
     "tslint": "^5.15.0",
     "tslint-config-prettier": "^1.18.0",
