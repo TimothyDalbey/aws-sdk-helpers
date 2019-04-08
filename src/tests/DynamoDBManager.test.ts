@@ -1,7 +1,7 @@
 import { expect } from "chai"
 import "mocha"
 
-import DynamoDBManager from "../../controllers/utilities/DynamoDBManager"
+import { DynamoDBManager } from "../"
 
 describe("DynamoDBManager", function() {
   describe("sanitizeForStorage", () => {
