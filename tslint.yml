@@ -19,3 +19,8 @@ rules:
   arrow-parens:
     - true
     - ban-single-arg-parens
+linterOptions:
+  exclude:
+    - node_modules/**
+    - "src/tests/**"
+    - "**/*.d.ts"
