@@ -1,6 +1,6 @@
 {
   "name": "@modaoperandi2/aws-sdk-helpers",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A nice greeter",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
