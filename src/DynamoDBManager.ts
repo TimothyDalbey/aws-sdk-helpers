@@ -4,7 +4,7 @@ interface IConstructorArgs {
   table_name: string
 }
 
-export default class DynamoDBManager {
+class DynamoDBManager {
   private _dc: any
   private _table_name: string
 
@@ -95,7 +95,7 @@ export default class DynamoDBManager {
 
   // Technical Debt:  This should be a private method
   public sanitizeForStorage = (object: any): any => {
-    const removeEmpty = obj => {
+    const removeEmpty = (obj: any) => {
       Object.keys(obj).forEach(
         k =>
           (obj[k] && typeof obj[k] === "object" && removeEmpty(obj[k])) ||
@@ -136,3 +136,5 @@ export default class DynamoDBManager {
     return await this._dc.put(parameters).promise()
   }
 }
+
+export { DynamoDBManager }
