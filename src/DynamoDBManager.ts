@@ -6,7 +6,6 @@ interface IConstructorArgs {
 }
 
 class DynamoDBManager {
-
   protected readonly _default_argumentation = {}
 
   private _dc: any
