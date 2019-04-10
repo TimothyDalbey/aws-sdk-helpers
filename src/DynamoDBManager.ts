@@ -1,21 +1,40 @@
 import { DocumentClient } from "aws-sdk/clients/dynamodb"
 
 interface IConstructorArgs {
-  table_name: string
+  table_name: string,
+  region?: string
 }
 
 class DynamoDBManager {
   private _dc: any
   private _table_name: string
+  private document_client_arguments: string[] = ['region'];
+  protected readonly _default_argumentation = {}
+
+  get default_argumentation(){
+    return this._default_argumentation;
+  }
 
   constructor(args: IConstructorArgs) {
     const { table_name } = args
     this._table_name = table_name
 
-    // Technical Debt:
-    // We should include the ability to configure the connection in the constructor.
-    // Specifically, region.
-    this._dc = new DocumentClient()
+    this.setDocumentClient(args);
+
+  }
+
+  public setDocumentClient = (args: IConstructorArgs) => {
+
+    const argumentation = Object.assign({}, args)
+
+    Object.keys(argumentation).map(key => {
+      if(this.document_client_arguments.indexOf(key) === -1){
+        delete (argumentation as any)[key]
+      }
+    })
+
+    this._dc = new DocumentClient(Object.assign(this.default_argumentation, argumentation))
+
   }
 
   // Technical Debt:  These "any" types need to be replaced with appropriate Interfaces

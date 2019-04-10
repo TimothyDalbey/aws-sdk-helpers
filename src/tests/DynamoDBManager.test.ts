@@ -4,6 +4,21 @@ import "mocha"
 import { DynamoDBManager } from "../"
 
 describe("DynamoDBManager", function() {
+
+  describe("constructor", () => {
+
+    it("Successfully constructs with argumentation", () => {
+      const _dynamo = new DynamoDBManager({ table_name: "test", region: 'us-east-1'});
+      expect(_dynamo instanceof DynamoDBManager).to.equal(true);
+    });
+
+    it("Successfully constructs with no additional argumentation", () => {
+      const _dynamo = new DynamoDBManager({ table_name: "test" });
+      expect(_dynamo instanceof DynamoDBManager).to.equal(true);
+    });
+
+  });
+
   describe("sanitizeForStorage", () => {
     const _dynamo = new DynamoDBManager({ table_name: "test" })
 
