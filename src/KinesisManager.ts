@@ -25,7 +25,7 @@ class KinesisManager {
     this._firehose = instance
   }
 
-  constructor(args: IConstructorArgs) {
+  constructor(args: IConstructorArgs = {}) {
     if (args.region !== undefined) {
       this.region = args.region
     }
