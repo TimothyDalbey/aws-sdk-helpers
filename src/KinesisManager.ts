@@ -6,7 +6,6 @@ interface IConstructorArgs {
 }
 
 class KinesisManager {
-
   protected _region: string = "us-east-1"
   protected _firehose: any = {}
 
@@ -27,16 +26,13 @@ class KinesisManager {
   }
 
   constructor(args: IConstructorArgs) {
-
     if (args.region !== undefined) {
       this.region = args.region
     }
     this.instantiateFirehose()
-
   }
 
   public push = async (record: any, delivery_stream_name: string): Promise<boolean> => {
-
     const input: Firehose.Types.PutRecordInput = {
       DeliveryStreamName: delivery_stream_name,
       Record: {
@@ -51,18 +47,14 @@ class KinesisManager {
     }
 
     return true
-
   }
 
   private instantiateFirehose = () => {
-
     this.firehose = new Firehose({
       region: this.region,
       apiVersion: "2015-08-04",
     })
-
   }
-
 }
 
 export { KinesisManager }
