@@ -44,6 +44,7 @@
     "typescript": "^3.4.2"
   },
   "dependencies": {
+    "@modaoperandi2/serverless-utilities": "^1.0.8",
     "@types/node": "^11.13.0",
     "aws-sdk": "^2.437.0"
   }
